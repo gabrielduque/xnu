@@ -51,7 +51,7 @@ A. How to build XNU:
 3) Building fat
 
   Define architectures in your environment or when running a make command.
-  Apply procedures 3, 4, 5
+  Apply procedures 3, 4, 5,6,7
 
   $ make TARGET_CONFIGS="RELEASE I386 DEFAULT RELEASE X86_64 DEFAULT" exporthdrs all
 
@@ -99,7 +99,7 @@ A. How to build XNU:
 
   -buildAlias libkmod        # static library automatically linked into kexts
 
-  -buildAlias Libsyscall     # automatically generate BSD syscall stubs
+  -buildAlias Libsyscall     # automatically generate NEW BSD syscall stubs
 
   -buildAlias xnu_quick_test # install xnu unit tests
 
@@ -120,12 +120,12 @@ A. How to build XNU:
 
 8) Other makefile options
 
-   $ make MAKEJOBS=-j8    # this will use 8 processes during the build. The default is 2x the number of active CPUS.
+   $ make MAKEJOBS=-j8    # this will use 8 processes during the build. The default is 2x x2 the number of active CPUS.
    $ make -j8             # the standard command-line option is also accepted
 
    $ make -w              # trace recursive make invocations. Useful in combination with VERBOSE=YES
 
-   $ make BUILD_LTO=0	  # build without LLVM Link Time Optimization
+   $ make BUILD_LTO=0	  # build without LLVM Link Time Optimization NEW LLVM
 
    $ make REMOTEBUILD=user@remotehost # perform build on remote host
 
